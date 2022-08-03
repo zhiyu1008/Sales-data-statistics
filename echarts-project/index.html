@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实时销售数据统计</title>
+    <link rel="stylesheet" href="fonts/icomoon.css" type="text/css">
+    <link rel="stylesheet" href="css/base.css" type="text/css">
+    <!-- 当日销量 -->
+    <link rel="stylesheet" href="css/overview.css" type="text/css">
+    <!-- 实时交易统计 -->
+    <link rel="stylesheet" href="css/monitor.css" type="text/css">
+    <!-- 销售地分布 -->
+    <link rel="stylesheet" href="css/point.css" type="text/css">
+    <!-- 地图 -->
+    <link rel="stylesheet" href="css/map.css" type="text/css">
+    <!--全国用户统计 -->
+    <link rel="stylesheet" href="css/users.css" type="text/css">
+    <!-- 日期统计 -->
+    <link rel="stylesheet" href="css/order.css" type="text/css">
+    <!-- 销售额统计 -->
+    <link rel="stylesheet" href="css/sales.css" type="text/css">
+    <!-- 季度销售,渠道分布 -->
+    <link rel="stylesheet" href="css/wrap.css" type="text/css">
+    <!-- 全国热销 -->
+    <link rel="stylesheet" href="css/hot.css" type="text/css">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <script src="js/echarts.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/flexible.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+    <div class="viewport">
+        <div class="column">
+            <div class="panel overview">
+                <div class="inner">
+                    <ul>
+                        <li>
+                            <h4>30万</h4>
+                            <span>
+                                <i class="icon-dot" style="color: #006cff;"></i>
+                                当日销量
+                            </span>
+                        </li>
+                        <li>
+                            <h4>120万</h4>
+                            <span>
+                                <i class="icon-dot"  style="color: #6acca3;"></i>
+                                当月销量
+                            </span>
+                        </li>
+                        <li>
+                            <h4>359万</h4>
+                            <span>
+                                <i class="icon-dot"  style="color: #6acca3;"></i>
+                                当季销量
+                            </span>
+                        </li>
+                        <li>
+                            <h4>1,390万</h4>
+                            <span>
+                                <i class="icon-dot"  style="color:  #ed3f35;"></i>
+                                当年销量
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="panel monitor">
+                <div class="inner">
+                    <ul id="tab" class="tabs">
+                        <li class="active">实时交易详情</li>
+                        <li>实时注册详情</li>
+                    </ul>
+                    <div class="content">
+                        <div class="head">
+                            <span class="col">交易时间</span>
+                            <span class="col">交易地区</span>
+                            <span class="col">交易金额</span>
+                        </div>
+                        <div class="marquee-view">
+                            <div class="marquee">
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">100万</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">100万</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">100万</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">100万</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">100万</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">100万</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">100万</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">100万</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="head">
+                            <span class="col">注册时间</span>
+                            <span class="col">注册地区</span>
+                            <span class="col">客户性别</span>
+                        </div>
+                        <div class="marquee-view">
+                            <div class="marquee">
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">男</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">女</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">男</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">男</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">男</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">男</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">男</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                                <div class="row">
+                                    <span class="col">10:00:30</span>
+                                    <span class="col">江西省南昌市东湖区</span>
+                                    <span class="col">男</span>
+                                    <span class="icon-dot"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel point">
+                <div class="inner">
+                    <h3>销售地分布统计</h3>
+                    <div class="chart">
+                        <div class="pie">
+                            饼图
+                        </div>
+                        <div class="data">
+                            <div class="item">
+                                <h4>320,11</h4>
+                                <span>
+                                    <i class="icon-dot" style="color : red;"></i>
+                                    销量总数
+                                </span>
+                            </div>
+                            <div class="item">
+                                <h4>12%</h4>
+                                <span>
+                                    <i class="icon-dot" style="color : yellow;"></i>
+                                    同比增长
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+           <div class="map">
+               <h3>
+                   <i class="icon-cube"></i>
+                   <span>设备数据统计</span>
+               </h3>
+               <div class="chart">
+                   <div class="geo"></div>
+               </div>
+           </div>
+           <div class="panel users">
+               <div class="inner">
+                   <h3>全国用户总量统计</h3>
+                   <div class="chart">
+                       <div class="bar">柱状图</div>
+                       <div class="data">
+                           <div class="item">
+                               <h4>161,888</h4>
+                               <span>
+                                   <i class="icon-dot" style="color:#ed3f35;"></i>
+                                    用户总量
+                               </span>
+                           </div>
+                           <div class="item">
+                               <h4>248</h4>
+                               <span>
+                                   <i class="icon-dot" style="color:#ed3f35;"></i>
+                                    本月新增
+                               </span>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+        <div class="column">
+            <div class="panel order">
+                <div class="inner">
+                    <div class="tabs">
+                        <a class="active" data-type="day365" href="javascript:;">365天</a>
+                        <a data-type="day90" href="javascript:;">90天</a>
+                        <a data-type="day30" href="javascript:;">30天</a>
+                        <a data-type="day1" href="javascript:;">24小时</a>
+                    </div>
+                    <div class="data">
+                        <div class="item">
+                            <h4>30,321,988</h4>
+                            <span>
+                                <i class="icon-dot" style="color : #ed3f35"></i>
+                                订单量
+                            </span>
+                        </div>
+                        <div class="item">
+                            <h4>99882</h4>
+                            <span>
+                                <i class="icon-dot" style="color : #ed3f35"></i>
+                                销售额(万元)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel sales">
+                <div class="inner">
+                    <div class="caption">
+                        <h3>销售额统计</h3>
+                        <div class="tabs">
+                            <a class="active" data-type="year" href="javascript:;">年</a>
+                            <a data-type="quarter" href="javascript:;">季</a>
+                            <a data-type="month" href="javascript:;">月</a>
+                            <a data-type="week" href="javascript:;">周</a>
+                        </div>
+                    </div>
+                    <div class="chart">
+                        <div class="line"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap">
+                <div class="panel channel">
+                    <div class="inner">
+                        <h3>渠道分布</h3>
+                        <div class="chart">
+                            <div class="radar"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel quarter">
+                    <div class="inner">
+                        <h3>一季度销售进度</h3>
+                        <div class="chart">
+                            <div class="pie"></div>
+                            <div class="data">
+                                <div class="item">
+                                    <h4>1,321</h4>
+                                    <span>
+                                     <i class="icon-dot" style="color: green;"></i>
+                                     销售额(1,321,123)
+                                    </span>
+                                </div>
+                                <div class="item">
+                                    <h4>150%</h4>
+                                    <span>
+                                        <i class="icon-dot" style="color: red;"></i>
+                                        同比增长
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel hot">
+                <div class="inner">
+                    <div class="all">
+                        <h3>全国热榜</h3>
+                        <ul>
+                            <li>
+                                <i class="icon-cup1" style="color: #d93f36;"></i>
+                                华为
+                            </li>
+                            <li>
+                                <i class="icon-cup2" style="color: #68d8fe;"></i>
+                                小米
+                            </li>
+                            <li>
+                                <i class="icon-cup3" style="color:#4c9bfd;"></i>
+                                oppo
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="province">
+                        <h3>各省热销 <i class="date">// 近30日 //</i></h3>
+                        <div class="data">
+                            <ul class="sup"></ul>
+                            <ul class="sub"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
