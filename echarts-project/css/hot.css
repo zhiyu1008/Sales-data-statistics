@@ -117,7 +117,7 @@
 
 .clock {
   position: absolute;
-  hot: -0.45rem;
+  top: -0.45rem;
   right: 0.5rem;
   font-size: 0.25rem;
   color: #0bace6;

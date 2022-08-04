@@ -363,7 +363,13 @@
             function () {
                 toggle()
             }
-
+        // 鼠标离开开启定时器
+        $('.sales').mouseleave(function () {
+            toggle()
+        }),
+        function () {
+            toggle()
+        }
         // tabs切换
         function tabs() {
             $(".sales .tabs a").eq(_index).addClass("active").siblings().removeClass("active")
