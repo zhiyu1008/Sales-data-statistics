@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>实时销售数据统计</title>
+		<link rel="stylesheet" href="fonts/icomoon.css">
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/index.css">
+		<script src="js/echarts.min.js"></script>
+		<script src="js/flexible.js"></script>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/china.js"></script>
+		<script src="js/map.js"></script>
+		<script src="js/index.js"></script>
+	</head>
+	<body>
+		<div class="viewport">
+			<div class="column">
+				<div class="panel overview">
+					<div class="inner">
+						<ul>
+							<li>
+								<h4>30万</h4>
+								<span><i class="icon-dot" style="color : #006cff"></i>当日销量</span>
+							</li>
+							<li>
+								<h4>120万</h4>
+								<span><i class="icon-dot" style="color : #6acca3"></i>当日销量</span>
+							</li>
+							<li>
+								<h4>359万</h4>
+								<span><i class="icon-dot" style="color : #6acca3"></i>当日销量</span>
+							</li>
+							<li>
+								<h4>1,390万</h4>
+								<span><i class="icon-dot" style="color : #ed3f35"></i>当日销量</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="panel monitor">
+					<div class="inner">
+						<div class="tabs">
+							<a href="javascript:;" class="active">实时交易详情</a>
+							<a href="javascript:;">实时注册详情</a>
+						</div>
+						<div class="content show">
+							<div class="head">
+								<span class="col">交易时间</span>
+								<span class="col">交易地区</span>
+								<span class="col">交易金额</span>
+							</div>
+							<div class="marquee-view">
+								<div class="marquee">
+									<div class="row">
+										<span class="col">10:00:01</span>
+										<span class="col">上海市黄浦区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:02</span>
+										<span class="col">北京市西城区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:03</span>
+										<span class="col">江苏省苏州市虎丘区</span>
+										<span class="col">女</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:05</span>
+										<span class="col">广东省广州市天河区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:07</span>
+										<span class="col">浙江省杭州市西湖区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:09</span>
+										<span class="col">安徽省合肥市包河区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:25</span>
+										<span class="col">福建省厦门市湖里区</span>
+										<span class="col">女</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:30</span>
+										<span class="col">江西省南昌市东湖区</span>
+										<span class="col">女</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:32</span>
+										<span class="col">山东省济南市市中区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:58</span>
+										<span class="col">湖北省武汉市江岸区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="content">
+							<div class="head">
+								<span class="col">注册时间</span>
+								<span class="col">注册地区</span>
+								<span class="col">客户性别</span>
+							</div>
+							<div class="marquee-view">
+								<div class="marquee">
+									<div class="row">
+										<span class="col">10:00:01</span>
+										<span class="col">上海市黄浦区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:02</span>
+										<span class="col">北京市西城区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:03</span>
+										<span class="col">江苏省苏州市虎丘区</span>
+										<span class="col">女</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:05</span>
+										<span class="col">广东省广州市天河区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:07</span>
+										<span class="col">浙江省杭州市西湖区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:09</span>
+										<span class="col">安徽省合肥市包河区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:25</span>
+										<span class="col">福建省厦门市湖里区</span>
+										<span class="col">女</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:30</span>
+										<span class="col">江西省南昌市东湖区</span>
+										<span class="col">女</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:32</span>
+										<span class="col">山东省济南市市中区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+									<div class="row">
+										<span class="col">10:00:58</span>
+										<span class="col">湖北省武汉市江岸区</span>
+										<span class="col">男</span>
+										<span class="icon-dot"></span>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="panel point">
+					<div class="inner">
+						<h3>销售地分布统计</h3>
+						<div class="chart">
+							<div class="pie"></div>
+							<div class="data">
+								<div class="item">
+									<h4>320,11</h4>
+									<span>
+										<i class="icon-dot" style="color: #ed3f35;"></i>
+										销量总数
+									</span>
+								</div>
+								<div class="item">
+									<h4>12%</h4>
+									<span>
+										<i class="icon-dot" style="color: #eacf19;"></i>
+										同比增长
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<div class="map">
+					<h3>
+						<span>
+							<i class="icon-cube"></i>
+							设备数据统计
+						</span>
+					</h3>
+					<div class="chart">
+						<div class="geo"></div>
+					</div>
+				</div>
+				<div class="panel users">
+					<div class="inner">
+						<h3>全国用户总量统计</h3>
+						<div class="chart">
+							<div class="bar"></div>
+							<div class="data">
+								<div class="item">
+									<h4>161,888</h4>
+									<span>
+										<i class="icon-dot"></i>
+										用户总量
+									</span>
+								</div>
+								<div class="item">
+									<h4>248</h4>
+									<span>
+										<i class="icon-dot"></i>
+										本月新增
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<div class="panel order">
+					<div class="inner">
+						<div class="filter">
+							<a href="javascript:;" data-type="day365" class="active">365天</a>
+							<a href="javascript:;" data-type="day90">90天</a>
+							<a href="javascript:;" data-type="day30">30天</a>
+							<a href="javascript:;" data-type="day1">24小时</a>
+						</div>
+						<div class="data">
+							<div class="item">
+								<h4>31,321,988</h4>
+								<span>
+									<i class="icon-dot"></i>
+									订单量
+								</span>
+							</div>
+							<div class="item">
+								<h4>99882</h4>
+								<span>
+									<i class="icon-dot"></i>
+									销售额(万元)
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel sales">
+					<div class="inner">
+						<div class="caption">
+							<h3>销售额统计</h3>
+							<a href="javascript:;" data-type="year" class="active">年</a>
+							<a href="javascript:;" data-type="quarter">季</a>
+							<a href="javascript:;" data-type="month">月</a>
+							<a href="javascript:;" data-type="week">周</a>
+						</div>
+						<div class="chart">
+							<div class="label">单位:万</div>
+							<div class="line"></div>
+						</div>
+					</div>
+				</div>
+				<div class="wrap">
+					<div class="panel channel">
+						<div class="inner">
+							<h3>渠道分布</h3>
+							<div class="data">
+								<div class="radar"></div>
+							</div>
+						</div>
+					</div>
+					<div class="panel quarter">
+						<div class="inner">
+							<h3>一季度销售进度</h3>
+							<div class="chart">
+								<div class="box">
+									<div class="gauge"></div>
+									<div class="label">50<small> %</small></div>
+								</div>
+								<div class="data">
+									<div class="item">
+										<h4>1,321</h4>
+										<span>
+											<i class="icon-dot" style="color: #6acca3"></i>
+											销售额(万元)
+										</span>
+									</div>
+									<div class="item">
+										<h4>150%</h4>
+										<span>
+											<i class="icon-dot" style="color: #ed3f35"></i>
+											同比增长
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="panel top">
+					<div class="inner">
+						<div class="all">
+							<h3>全国热榜</h3>
+							<ul>
+								<li>
+									<i class="icon-cup1" style="color: #d93f36;"></i>
+									华为
+								</li>
+								<li>
+									<i class="icon-cup2" style="color: #68d8fe;"></i>
+									小米
+								</li>
+								<li>
+									<i class="icon-cup3" style="color: #4c9bfd;"></i>
+									oppo
+								</li>
+							</ul>
+						</div>
+						<div class="province">
+							<div class="province-title">
+								<h3>各省热销</h3>
+								<i class="date">//近30日//</i>
+							</div>
+							<div class="data">
+								<ul class="sup">
+									<!-- <li class="">
+										<span>北京</span>
+										<span>35, 279<s class="icon-up"></s></span>
+									</li>
+									<li class="">
+										<span>河北</span>
+										<span>23252<s class="icon-down"></s></span>
+									</li>
+									<li class="">
+										<span>上海</span>
+										<span>20760<s class="icon-up"></s></span>
+									</li>
+									<li class="">
+										<span>江苏</span>
+										<span>23252<s class="icon-up"></s></span>
+									</li>
+									<li class="active">
+										<span>山东</span>
+										<span>20760<s class="icon-up"></s></span>
+									</li> -->
+								</ul>
+
+
+
+								<ul class="sub">
+									<!-- <li>
+										<span>华为</span>
+										<span> 9,567<s class="icon-up"></s></span>
+									</li>
+									<li>
+										<span>oppo</span>
+										<span> 9,037<s class="icon-down"></s></span>
+									</li>
+									<li>
+										<span>vivo</span>
+										<span> 1,080<s class="icon-up"></s></span>
+									</li>
+									<li>
+										<span>荣耀</span>
+										<span> 9,567<s class="icon-down"></s></span>
+									</li>
+									<li>
+										<span>iphone</span>
+										<span> 9,999<s class="icon-up"></s></span>
+									</li> -->
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

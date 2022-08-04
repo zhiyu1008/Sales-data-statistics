@@ -1,0 +1,66 @@
+/*清除元素默认的内外边距  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*让所有斜体 不倾斜*/
+em, i {
+    font-style: normal;
+}
+/*去掉列表前面的小点*/
+li {
+    list-style: none;
+}
+/*图片没有边框   去掉图片底侧的空白缝隙*/
+img {
+    border: 0; /*ie6*/
+    vertical-align: middle;
+}
+/*让button 按钮 变成小手*/
+button {
+    cursor: pointer;
+}
+/*取消链接的下划线*/
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e33333;
+}
+
+@media screen and (max-width: 1024px){
+    html{
+        font-size : 42.66px!important;
+    }
+}
+
+@media screen and (min-width: 1920px){
+    html{
+        font-size : 80px!important;
+    }
+}
+
+.panel{
+    position: relative;
+    border:15px solid transparent;
+    border-image-source: url("../images/border.png");
+    border-width:  0.6375rem 0.475rem 0.25rem 1.65rem;
+    border-image-slice: 51 38 20 132;
+    margin-bottom:0.25rem;
+}
+.inner{
+    position: absolute;
+    top : -0.6375rem;
+    left : -1.65rem;
+    bottom : -0.25rem;
+    right : -0.475rem;
+    padding : 0.3rem 0.45rem;
+}
+.panel h3{
+	font-size: 0.25rem;
+	color : #fff;
+	font-weight: bold;
+}

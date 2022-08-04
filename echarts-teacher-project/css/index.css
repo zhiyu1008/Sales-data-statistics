@@ -1,0 +1,540 @@
+body{
+    background: url("../images/bg.jpg") no-repeat;
+    background-size: cover;
+}
+.viewport{
+    min-width: 1024px;
+    max-width: 1920px;
+    background:url("../images/logo.png") no-repeat;
+    background-size: contain;
+    min-height: 780px;
+    margin: 0 auto;
+    padding: 1.1rem 0.25rem 0;
+    color : #fff;
+    display: flex;
+}
+
+.viewport .column{
+    flex : 3;
+}
+.viewport .column:nth-child(2){
+    flex : 4;
+	padding : .4rem .25rem 0;
+}
+
+/**项目概览样式***/
+.overview{
+    height : 1.375rem;
+}
+
+.overview .inner ul{
+    display: flex;
+    justify-content: space-between;
+}
+.overview .inner ul h4{
+    font-size:0.35rem;
+    color : #fff;
+    margin:  0 0 0 0.06rem;
+}
+.overview .inner ul span{
+    color: #4c9bfd;
+    font-size : 0.2rem;
+    position: relative;
+    top : -0.1375rem;
+}
+
+/**监控区域样式***/
+.monitor{
+    height : 6rem;
+}
+.monitor .inner{
+    padding: .3rem 0;
+    display: flex;
+    flex-direction: column;
+}
+.monitor .tabs{
+    padding: 0 .45rem;
+    margin-bottom: 0.225rem;
+    display: flex;
+}
+
+.monitor .tabs a{
+    color:#1950c4;
+    font-size: 0.225rem;
+    padding: 0 .3375rem;
+}
+.monitor .tabs a:first-child{
+    padding-left: 0;
+    border-right: 0.025rem solid #00f2f1;
+}
+.monitor .tabs a.active{
+    color: #fff;
+}
+.monitor .content{
+    flex: 1;
+    position: relative;
+    display: none;
+}
+
+
+.monitor .show{
+    display: block;
+}
+.monitor .head{
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.05;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.15rem 0.45rem;
+    color: #68d8fe;
+    font-size: 0.175rem;
+}
+.monitor .marquee-view {
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+}
+.monitor .row{
+    display: flex;
+    justify-content: space-between;
+    line-height: 1.05;
+    font-size: 0.15rem;
+    color: #61a8ff;
+    padding: 0.15rem 0.45rem;
+}
+.monitor .row .icon-dot{
+    position: absolute;
+    left: 0.2rem;
+    opacity: 0;
+}
+.monitor .row:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #68d8fe;
+}
+.monitor .row:hover .icon-dot{
+    opacity: 1;
+}
+.monitor .col:first-child{
+    width: 1rem;
+}
+.monitor .col:nth-child(2){
+    width: 2.5rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.monitor .col:nth-child(3){
+    width: 1rem;
+}
+
+.marquee-view .marquee{
+    animation: move 15s linear infinite;
+}
+@keyframes move {
+    0%{
+
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+.marquee-view .marquee:hover{
+    animation-play-state: paused;
+}
+
+/* 销售区域样式 */
+.point{
+	height : 4.25rem;
+}
+.point .chart{
+	display: flex;
+	justify-content: space-between;
+	margin-top: 0.3rem;
+}
+.point .chart .pie{
+	width: 3.9rem;
+	height : 3rem;
+	margin-left : -0.125rem;
+}
+.point .chart .data{
+	background: url("../images/rect.png");
+	background-size: cover;
+	display : flex;
+	width : 2.1rem;
+	min-width : 100px;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: .45rem .375rem;
+}
+.point h4{
+	font-size: 0.35rem;
+	color : #fff;
+	margin-bottom: 0.15rem;
+}
+.point span{
+	font-size: 0.2rem;
+	color : #4c9bfd;
+	display:block;
+}
+
+/* 地图样式 */
+.map{
+	display: flex;
+	flex-direction: column;
+	height : 7.225rem;
+	margin-bottom: 0.25rem;
+}
+.map h3{
+	line-height: 1;
+	padding : 0.2rem 0;
+	margin: 0;
+	font-size: 0.25rem;
+	color : #fff;
+	font-weight: 400;
+}
+.map .chart{
+	flex : 1;
+	background-color: rgba(255,255,255,0.05);
+}
+.map .geo{
+	width: 100%;
+	height :100%;
+}
+
+/* 用户总量样式 */
+.users{
+	height : 4.25rem;
+}
+.users .chart{
+	display: flex;
+	 margin-top: 0.3rem;
+	justify-content: space-between;
+}
+.users .chart .bar{
+	width: 7.35rem;
+	height: 3rem;
+}
+.users .chart .data{
+	background: url("../images/rect.png");
+	background-size: cover;
+	display : flex;
+	width : 2.5rem;
+	min-width : 100px;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding: .45rem .375rem;
+}
+.users h4{
+	font-size: 0.35rem;
+	color : #fff;
+	margin-bottom: 0.15rem;
+}
+.users span{
+	font-size: 0.15rem;
+	color : #4c9bfd;
+	display:block;
+}
+
+.order{
+	height : 1.875rem;
+}
+.order .filter{
+	display: flex;
+}
+.order .filter a{
+	height: 0.225rem;
+	line-height: 1;
+	padding: 0 0.225rem;
+	color: #1950c4;
+	font-size: 0.225rem;
+	display: block;
+	border-right: 0.025rem solid #00f2f1;
+}
+.order .filter a:first-child {
+    padding-left: 0;
+}
+.order .filter a:last-child {
+    border-right: none;
+}
+.order .filter a.active {
+    color: #fff;
+    font-size: 0.25rem;
+}
+.order .data{
+	display: flex;
+	margin-top: 0.25rem;
+}
+.order .data .item{
+	flex : 1;
+}
+.order .data h4{
+	font-size: 0.35rem;
+	color: #fff;
+	margin-bottom: 0.125rem;
+}
+.order .data span{
+	display: block;
+	color: #4c9bfd;
+	font-size: 0.2rem;
+}
+
+
+/* 销售额样式 */
+.sales {
+	height : 3.1rem;
+}
+.sales .caption{
+	display: flex;
+	line-height: 1;
+}
+.sales .caption h3{
+	height: 0.225rem;
+	padding-right: 0.225rem;
+	border-right: 0.025rem solid #00f2f1;
+}
+.sales a {
+
+    color: #0bace6;
+	font-size: 0.2rem;
+	padding: 0.05rem;
+	margin: -0.0375rem 0 0 0.2625rem;
+	border-radius: 0.0375rem;
+}
+.sales a.active{
+	background-color: #4c9bfd;;
+	color :#fff ;
+}
+.sales .inner{
+	display: flex;
+	 
+	flex-direction: column;
+}
+
+.sales .chart{
+	flex : 1;
+	padding-top: 0.1875rem;
+	position: relative;
+}
+.sales .label{
+	color: #4996f5;
+	font-size: 0.175rem;
+	position: absolute;
+	left: 0.525rem;
+	top: 0.225rem
+}
+
+.sales .line{
+	width: 100%;
+	height: 100%;
+}
+
+.wrap{
+	display: flex;
+}
+.channel, .quarter{
+	flex : 1;
+	height: 2.9rem;
+}
+.channel{
+	margin-right : 0.25rem;
+}
+.wrap .channel .data{
+	height : 2.1rem;
+	overflow: hidden;
+}
+.wrap .channel .radar{
+	width: 100%;
+	height : 100%;
+}
+
+
+quarter .inner {
+    display: flex;
+    flex-direction: column;
+    margin: 0 -0.075rem;
+}
+.quarter .chart {
+    flex: 1;
+    padding-top: 0.225rem;
+}
+.quarter .box {
+    position: relative;
+}
+.quarter .label {
+    transform: translate(-50%, -30%);
+    color: #fff;
+    font-size: 0.375rem;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.quarter .label small {
+    font-size: 50%;
+}
+.quarter .gauge {
+    height: 1.05rem;
+}
+.quarter .data {
+    display: flex;
+    justify-content: space-between;
+}
+.quarter .item {
+    width: 50%;
+}
+.quarter h4 {
+    color: #fff;
+    font-size: 0.3rem;
+    margin-bottom: 0.125rem;
+}
+.quarter span {
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    color: #4c9bfd;
+    font-size: 0.175rem;
+}
+
+/* 各省热销样式 */
+.top{
+	height : 3.5rem;
+}
+.top .inner{
+	display: flex;
+}
+.top .inner .all{
+	display: flex;
+	flex-direction:column;
+	justify-content: space-between;
+	width: 2.1rem;
+	color: #4c9bfd;
+	font-size: 0.175rem;
+	vertical-align: middle;
+}
+.top .inner .all ul{
+	flex : 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.top .all li {
+    overflow: hidden;
+}
+.top .all [class^="icon-"] {
+    font-size: 0.45rem;
+    vertical-align: middle;
+    margin-right: 0.15rem;
+}
+
+.province{
+	flex : 1;
+}
+.province-title{
+	display: flex;
+	justify-content: space-between;
+}
+.province-title .date{
+	padding: 0 0.15rem;
+	margin-top: 0.0625rem;
+	font-size: 0.175rem;
+	color: #0bace6;
+}
+.top .province {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+}
+.top .province i {
+    padding: 0 0.15rem;
+    margin-top: 0.0625rem;
+    float: right;
+    font-style: normal;
+    font-size: 0.175rem;
+    color: #0bace6;
+}
+.top .province s {
+    display: inline-block;
+    transform: scale(0.8);
+    text-decoration: none;
+}
+.top .province .icon-up {
+    color: #dc3c33;
+}
+.top .province .icon-down {
+    color: #36be90;
+}
+.top .province .data {
+    flex: 1;
+    display: flex;
+    margin-top: 0.175rem;
+}
+.top .province ul {
+    flex: 1;
+    line-height: 1;
+    margin-bottom: 0.175rem;
+}
+.top .province ul li {
+    display: flex;
+    justify-content: space-between;
+}
+.top .province ul span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.top .province ul.sup {
+    font-size: 0.175rem;
+}
+.top .province ul.sup li {
+    color: #4995f4;
+    padding: 0.15rem;
+}
+.top .province ul.sup li.active {
+    color: #a3c6f2;
+    background-color: rgba(10, 67, 188, 0.2);
+}
+.top .province ul.sub {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 0.15rem;
+    background-color: rgba(10, 67, 188, 0.2);
+}
+.top .province ul.sub li {
+    color: #52ffff;
+    padding: 0.125rem 0.175rem;
+}
+.clock {
+    position: absolute;
+    top: -0.45rem;
+    right: 0.5rem;
+    font-size: 0.25rem;
+    color: #0bace6;
+}
+.clock i {
+    margin-right: 5px;
+    font-size: 0.25rem;
+}
+@media screen and (max-width: 1600px) {
+    .top span {
+        transform: scale(0.9);
+    }
+    .top .province ul.sup li {
+        padding: 0.125rem 0.15rem;
+    }
+    .top .province ul.sub li {
+        padding: 0.0625rem 0.15rem;
+    }
+    .quarter span {
+        transform: scale(0.9);
+    }
+}
+
