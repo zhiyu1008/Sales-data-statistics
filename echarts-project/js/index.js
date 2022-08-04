@@ -284,15 +284,28 @@
             tabs()
         })
 
+        let timer = null
 
-        setInterval(() => {
-            tabs()
-            _index += 1
-            if (_index >= 4) {
-                _index = 0
-            }
-        }, 1000)
+        function toggle() {
+            clearInterval(timer)
+            timer = setInterval(() => {
+                tabs()
+                _index += 1
+                if (_index >= 4) {
+                    _index = 0
+                }
+            }, 1000)
+        }
+        toggle()
 
+        // 鼠标进入关闭定时器
+        $('.order').mouseenter(function () {
+            clearInterval(timer)
+        })
+        // 鼠标离开开启定时器
+        $('.order').mouseleave(function () {
+            toggle()
+        })
 
         function tabs() {
             $(".order .tabs a").eq(_index).addClass("active").siblings().removeClass("active")
@@ -358,18 +371,12 @@
         toggle()
         // 鼠标进入清除定时器
         $('.sales').hover(function () {
-                clearInterval(timer)
-            }),
-            function () {
-                toggle()
-            }
+            clearInterval(timer)
+        })
         // 鼠标离开开启定时器
         $('.sales').mouseleave(function () {
             toggle()
-        }),
-        function () {
-            toggle()
-        }
+        })
         // tabs切换
         function tabs() {
             $(".sales .tabs a").eq(_index).addClass("active").siblings().removeClass("active")
@@ -588,17 +595,18 @@
         const myChart = echarts.init(pie)
 
         const option = {
-            color: [
-                {
+            color: [{
                     type: 'linear',
                     x: 0,
                     y: 0,
                     x2: 0,
                     y2: 1,
                     colorStops: [{
-                        offset: 0, color: '#00c9e0' // 0% 处的颜色
+                        offset: 0,
+                        color: '#00c9e0' // 0% 处的颜色
                     }, {
-                        offset: 1, color: '#005fc1' // 100% 处的颜色
+                        offset: 1,
+                        color: '#005fc1' // 100% 处的颜色
                     }],
                     global: false // 缺省为 false
                 },
@@ -618,25 +626,31 @@
                     fontSize: 20
                 }
             },
-            series: [
-                {
-                    name: 'Access From',
-                    type: 'pie',
-                    silent: 'ture',
-                    radius: ['130%', '150%'],
-                    center: ["48%", "80%"],
-                    avoidLabelOverlap: false,
-                    labelLine: {
-                        show: false
+            series: [{
+                name: 'Access From',
+                type: 'pie',
+                silent: 'ture',
+                radius: ['130%', '150%'],
+                center: ["48%", "80%"],
+                avoidLabelOverlap: false,
+                labelLine: {
+                    show: false
+                },
+                startAngle: 180,
+                data: [{
+                        value: 100
                     },
-                    startAngle: 180,
-                    data: [
-                        {value: 100},
-                        {value: 100},
-                        {value: 200, itemStyle: {color: 'transparent'}},
-                    ]
-                }
-            ]
+                    {
+                        value: 100
+                    },
+                    {
+                        value: 200,
+                        itemStyle: {
+                            color: 'transparent'
+                        }
+                    },
+                ]
+            }]
         };
 
         myChart.setOption(option)
@@ -648,71 +662,186 @@
 // 全国和各省的热销
 (function () {
     $(document).ready(function () {
-        const data = [
-            {
+        const data = [{
                 city: "北京", // 城市
                 sales: "35, 279", // 销售额
                 flag: true, //  上升还是下降
                 brands: [
                     //  品牌种类数据
-                    {name: "华为", num: "9,086", flag: true},
-                    {name: "小米", num: "8,341", flag: true},
-                    {name: "oppo", num: "7,407", flag: false},
-                    {name: "vivo", num: "6,080", flag: false},
-                    {name: "荣耀", num: "6,724", flag: false},
-                    {name: "iphone", num: "2,170", flag: true}
+                    {
+                        name: "华为",
+                        num: "9,086",
+                        flag: true
+                    },
+                    {
+                        name: "小米",
+                        num: "8,341",
+                        flag: true
+                    },
+                    {
+                        name: "oppo",
+                        num: "7,407",
+                        flag: false
+                    },
+                    {
+                        name: "vivo",
+                        num: "6,080",
+                        flag: false
+                    },
+                    {
+                        name: "荣耀",
+                        num: "6,724",
+                        flag: false
+                    },
+                    {
+                        name: "iphone",
+                        num: "2,170",
+                        flag: true
+                    }
                 ]
             },
             {
                 city: "河北",
                 sales: "23,252",
                 flag: false,
-                brands: [
-                    {name: "华为", num: "3,457", flag: false},
-                    {name: "小米", num: "2,124", flag: true},
-                    {name: "oppo", num: "8,907", flag: false},
-                    {name: "vivo", num: "6,080", flag: true},
-                    {name: "荣耀", num: "1,724", flag: false},
-                    {name: "iphone", num: "1,170", flag: false}
+                brands: [{
+                        name: "华为",
+                        num: "3,457",
+                        flag: false
+                    },
+                    {
+                        name: "小米",
+                        num: "2,124",
+                        flag: true
+                    },
+                    {
+                        name: "oppo",
+                        num: "8,907",
+                        flag: false
+                    },
+                    {
+                        name: "vivo",
+                        num: "6,080",
+                        flag: true
+                    },
+                    {
+                        name: "荣耀",
+                        num: "1,724",
+                        flag: false
+                    },
+                    {
+                        name: "iphone",
+                        num: "1,170",
+                        flag: false
+                    }
                 ]
             },
             {
                 city: "上海",
                 sales: "20,760",
                 flag: true,
-                brands: [
-                    {name: "华为", num: "2,345", flag: true},
-                    {name: "小米", num: "7,109", flag: true},
-                    {name: "oppo", num: "3,701", flag: false},
-                    {name: "vivo", num: "6,080", flag: false},
-                    {name: "荣耀", num: "2,724", flag: false},
-                    {name: "iphone", num: "2,998", flag: true}
+                brands: [{
+                        name: "华为",
+                        num: "2,345",
+                        flag: true
+                    },
+                    {
+                        name: "小米",
+                        num: "7,109",
+                        flag: true
+                    },
+                    {
+                        name: "oppo",
+                        num: "3,701",
+                        flag: false
+                    },
+                    {
+                        name: "vivo",
+                        num: "6,080",
+                        flag: false
+                    },
+                    {
+                        name: "荣耀",
+                        num: "2,724",
+                        flag: false
+                    },
+                    {
+                        name: "iphone",
+                        num: "2,998",
+                        flag: true
+                    }
                 ]
             },
             {
                 city: "江苏",
                 sales: "23,252",
                 flag: false,
-                brands: [
-                    {name: "华为", num: "2,156", flag: false},
-                    {name: "小米", num: "2,456", flag: true},
-                    {name: "oppo", num: "9,737", flag: true},
-                    {name: "vivo", num: "2,080", flag: true},
-                    {name: "荣耀", num: "8,724", flag: true},
-                    {name: "iphone", num: "1,770", flag: false}
+                brands: [{
+                        name: "华为",
+                        num: "2,156",
+                        flag: false
+                    },
+                    {
+                        name: "小米",
+                        num: "2,456",
+                        flag: true
+                    },
+                    {
+                        name: "oppo",
+                        num: "9,737",
+                        flag: true
+                    },
+                    {
+                        name: "vivo",
+                        num: "2,080",
+                        flag: true
+                    },
+                    {
+                        name: "荣耀",
+                        num: "8,724",
+                        flag: true
+                    },
+                    {
+                        name: "iphone",
+                        num: "1,770",
+                        flag: false
+                    }
                 ]
             },
             {
                 city: "山东",
                 sales: "20,760",
                 flag: true,
-                brands: [
-                    {name: "华为", num: "9,567", flag: true},
-                    {name: "小米", num: "2,345", flag: false},
-                    {name: "oppo", num: "9,037", flag: false},
-                    {name: "vivo", num: "1,080", flag: true},
-                    {name: "荣耀", num: "4,724", flag: false},
-                    {name: "iphone", num: "9,999", flag: true}
+                brands: [{
+                        name: "华为",
+                        num: "9,567",
+                        flag: true
+                    },
+                    {
+                        name: "小米",
+                        num: "2,345",
+                        flag: false
+                    },
+                    {
+                        name: "oppo",
+                        num: "9,037",
+                        flag: false
+                    },
+                    {
+                        name: "vivo",
+                        num: "1,080",
+                        flag: true
+                    },
+                    {
+                        name: "荣耀",
+                        num: "4,724",
+                        flag: false
+                    },
+                    {
+                        name: "iphone",
+                        num: "9,999",
+                        flag: true
+                    }
                 ]
             }
         ]
@@ -729,7 +858,7 @@
         $(".province .sup li").eq(0).addClass("active")
         const firstData = data[0].brands
 
-        function renderHtml(params){
+        function renderHtml(params) {
             let subHtml = ""
             $.each(params, function (i, item) {
                 subHtml += `
@@ -744,7 +873,7 @@
         renderHtml(firstData)
 
         let _index = 0
-        $(".province .sup").on("mouseenter",'li',function () {
+        $(".province .sup").on("mouseenter", 'li', function () {
             clearInterval(timer)
             _index = $(this).index()
             $(this).addClass("active").siblings().removeClass("active")
@@ -752,21 +881,22 @@
             renderHtml(currentData)
         })
 
-        $(".province .sup").on("mouseleave",'li',function () {
+        $(".province .sup").on("mouseleave", 'li', function () {
             autoPlay()
         })
 
         let timer = null
-        function autoPlay(){
-           timer = setInterval(()=>{
-                _index+=1
-                if(_index>=5){
+
+        function autoPlay() {
+            timer = setInterval(() => {
+                _index += 1
+                if (_index >= 5) {
                     _index = 0
                 }
                 $(".province .sup li").eq(_index).addClass("active").siblings().removeClass("active")
                 const currentData = data[_index].brands
                 renderHtml(currentData)
-            },1000)
+            }, 1000)
         }
         autoPlay()
 
